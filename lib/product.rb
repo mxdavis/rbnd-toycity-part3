@@ -26,7 +26,6 @@ class Product
     end
   end
 
-
   def self.in_stock
     items_in_stock = []
     @@products.select do |product|
@@ -37,6 +36,11 @@ class Product
     items_in_stock.each do |item|
       puts "#{item.title}"
     end
+  end
+
+
+  def take_one_stock_away_after_purchase
+    @stock -= 1
   end
 
   private
