@@ -26,6 +26,19 @@ class Product
     end
   end
 
+
+  def self.in_stock
+    items_in_stock = []
+    @@products.select do |product|
+      if product.in_stock?
+        items_in_stock << product
+      end
+    end
+    items_in_stock.each do |item|
+      puts "#{item.title}"
+    end
+  end
+
   private
 
    def add_to_products
