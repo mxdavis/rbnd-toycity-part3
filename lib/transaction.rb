@@ -23,6 +23,11 @@ class Transaction
     end
   end
 
+  def return_made
+  	@product.stock += 1
+  	@@transactions.delete(self)
+  end
+
   def self.all
   	@@transactions
   end
