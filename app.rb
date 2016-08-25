@@ -46,10 +46,11 @@ puts walter.name # Should return "Walter Latimer"
 
 transaction = Transaction.new(walter, nanoblock)
 
-puts transaction.id # Should return 1 - I made random order number, don't want customer to know which number order they are
+puts transaction.id # Should return 1 
 puts transaction.product == nanoblock # Should return true
 puts transaction.product == firehouse # Should return false
 puts transaction.customer == walter # Should return true
+
 
 puts nanoblock.stock # Should return 11
 
@@ -60,8 +61,8 @@ puts walter.purchase(nanoblock)
 
 puts Transaction.all.count # Should return 2
 
-# transaction2 = Transaction.find(2)
-# puts transaction2.product == nanoblock # Should return true
+transaction2 = Transaction.find(2)
+puts transaction2.product == nanoblock # Should return true
 
 # walter.purchase(firehouse)
 # Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.

@@ -1,13 +1,14 @@
 class Transaction
-	attr_accessor :id, :product, :customer
+	attr_reader :id, :product, :customer
 
 	@@transactions = []
-	@@unique_ids = []
+	@@id = 1
 
 	def initialize(customer, product)
 		@customer = customer
 		@product = product
-		generate_id
+		@id = @@id
+		@@id += 1
 		purchase_made
 		@product.take_one_stock_away_after_purchase
 	end
@@ -16,7 +17,7 @@ class Transaction
     if product.in_stock?
       @@transactions << self
     else 
-      raise NoStockProductError, "#{product} is out of stock"
+      raise OutOfStockError, "#{self.product.title} is out of stock"
     end
   end
 
@@ -24,14 +25,8 @@ class Transaction
   	@@transactions
   end
 
-	protected
-	  def generate_id
-      unique_id = rand(36**8).to_s(36)
-      if !@@unique_ids.include? self.id
-      @@unique_ids << unique_id
-      @id = unique_id
-    else
-      generate_id
-    end 
+
+  def self.find(id_no)
+    @@transactions.find { |transaction| transaction.id == id_no }
   end
 end
