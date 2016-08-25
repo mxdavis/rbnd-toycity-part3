@@ -1,0 +1,8 @@
+How long did you spend working on this project?
+Too long! Probably 20 hours!
+What was the most rewarding challenge you conquered?
+Finally understanding that product had it's own array within transactions and actually printint out the whole array and being able to understand this myself without having to resort to slack or forums
+What two additional features did you build? Why?
+Return item, because every store needs to have returns, and a unique order confirmation so eventually it can send out emails with order confirmation which looks much nicer than the id!
+Where do you still have room to grow?
+EVERYWHERE! Still trying to figure out if ruby is for me! But no time to think lots of projects to complete and no time! Ruby was always very frustrating so kept pushing it off, but I really do want to reach the end of this course, though not sure if ruby really is for me.
