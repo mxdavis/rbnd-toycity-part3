@@ -19,16 +19,12 @@ class Product
   end
 
   def in_stock?
-    if @stock > 0
-      return true
-    else
-      return false
-    end
+    @stock > 0
   end
 
   def self.in_stock
     items_in_stock = []
-    @@products.select do |product|
+    @@products.each do |product|
       if product.in_stock?
         items_in_stock << product
       end

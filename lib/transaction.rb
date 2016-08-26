@@ -8,11 +8,11 @@ class Transaction
 	def initialize(customer, product)
 		@customer = customer
 		@product = product
+    purchase_made
 		@id = @@id
 		@@id += 1
-		purchase_made
+    generate_order_confirmation
 		@product.take_one_stock_away_after_purchase
-		generate_order_confirmation
 	end
 
 	def purchase_made
